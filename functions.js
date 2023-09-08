@@ -42,3 +42,16 @@ export function del(out) {
 export function clear(out) {
     out.value = 0
 }
+
+// 5÷6-8+7×8+7-8÷9-8
+
+export function calculator(out) {
+
+    try {
+        let expression = out.value.replace(/÷/g, '/').replace(/×/g, '*')
+        const result = eval(expression)
+        out.value = Math.round(result * 10000) / 10000
+    } catch(error) {
+        out.value = 'Err'
+    }
+}

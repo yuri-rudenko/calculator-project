@@ -1,4 +1,4 @@
-import { addNum, addOperator, del, clear} from "./functions.js"
+import { addNum, addOperator, del, clear, calculator} from "./functions.js"
 
 let out = document.querySelector(".result input")
 let buttons = document.querySelectorAll(".button-wrapper")
@@ -38,6 +38,11 @@ for(let b of buttons) {
             clear(out)
         })
     }
+    if(b.classList[1] == 'equals') {
+        b.addEventListener('click', () => {
+            calculator(out)
+        })
+    }
 
 
 }
@@ -61,6 +66,15 @@ document.addEventListener('keydown', (e) => {
             }
             if(e.key == ',' || e.key == '.') {
                 addOperator(',', out)
+            }
+            if(e.key == 'Backspace') {
+                del(out)
+            }
+            if(e.key == 'Delete') {
+                clear(out)
+            }
+            if(e.key == '=') {
+                calculator(out)
             }
     }
 })
