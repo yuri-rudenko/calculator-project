@@ -19,11 +19,23 @@ html, body {
     padding: 10px;
 }
 
-.wrapper .result input {
+.wrapper .result .normal {
     width: 368px;
+    height: 83px;
     border: none;
     background-color: #FFFAFF;
     font-size: 60px;
+    text-align: right;
+    color: #303036;
+    border: 4px solid black;
+}
+
+.wrapper .result .smaller {
+    width: 368px;
+    height: 83px;
+    border: none;
+    background-color: #FFFAFF;
+    font-size: 40px;
     text-align: right;
     color: #303036;
     border: 4px solid black;

@@ -1,5 +1,5 @@
 export function addNum(num, out) {
-    if(!parseInt(out.value)) out.value = num
+    if(!parseFloat(out.value)) out.value = num
     else out.value += num
 }
 
@@ -12,9 +12,9 @@ export function addOperator(val, out) {
         out.value = str2
         out.value += val
     }
-    else if(parseInt(out.value)) out.value += `${val}`
+    else if(parseFloat(out.value)) out.value += `${val}`
 
-    if(!parseInt(out.value) && val == '-') out.value = `${val}`
+    if(!parseFloat(out.value) && val == '-') out.value = `${val}`
 
     if(val == '.') {
 

@@ -1,10 +1,14 @@
 import { addNum, addOperator, del, clear, calculator} from "./functions.js"
+import { checkOutSize } from "./outStyle.js"
 
 let out = document.querySelector(".result input")
 let buttons = document.querySelectorAll(".button-wrapper")
 let operators = document.querySelectorAll('.operator')
 let clearer = document.querySelector('.clear')
 let deleter = document.querySelector('.delete')
+
+document.addEventListener('keydown', () => {checkOutSize(out)})
+document.addEventListener('click', () => {checkOutSize(out)})
 
 for(let b of buttons) { 
     let val = b.querySelector('.button').innerHTML
@@ -25,7 +29,9 @@ for(let b of buttons) {
 
     if(b.classList[1] == 'operator') {
         b.addEventListener('click', () => {
-            addOperator(val, out)
+            if(val == ',') addOperator('.', out)
+            else addOperator(val, out)
+            
         })
     }
     if(b.classList[1] == 'delete') {
