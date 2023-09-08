@@ -4,7 +4,7 @@ export function addNum(num, out) {
 }
 
 export function addOperator(val, out) {
-    let ops = ['+', '-', '×', '÷', ',']
+    let ops = ['+', '-', '×', '÷', '.']
     let last = (out.value[out.value.length-1])  
     
     if(ops.includes(last) && out.value.length > 1) {
@@ -16,7 +16,7 @@ export function addOperator(val, out) {
 
     if(!parseInt(out.value) && val == '-') out.value = `${val}`
 
-    if(val == ',') {
+    if(val == '.') {
 
         let right = -1
         for(let i = 0; i< ops.length-1; i++) {
@@ -25,7 +25,7 @@ export function addOperator(val, out) {
             }
         }
 
-        if(out.value.lastIndexOf(',', out.value.length-2) > right) {
+        if(out.value.lastIndexOf('.', out.value.length-2) > right) {
             let str2 = out.value.slice(0, -1)
             out.value = str2
         }

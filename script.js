@@ -65,7 +65,7 @@ document.addEventListener('keydown', (e) => {
                 addOperator('×', out)
             }
             if(e.key == ',' || e.key == '.') {
-                addOperator(',', out)
+                addOperator('.', out)
             }
             if(e.key == 'Backspace') {
                 del(out)
@@ -73,7 +73,7 @@ document.addEventListener('keydown', (e) => {
             if(e.key == 'Delete') {
                 clear(out)
             }
-            if(e.key == '=') {
+            if(e.key == '=' || e.key == 'Enter') {
                 calculator(out)
             }
     }
