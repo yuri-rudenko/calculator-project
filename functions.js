@@ -48,6 +48,8 @@ export function clear(out) {
 
 export function calculator(out) {
 
+    if(isNaN(out.value[out.value.length - 1])) return
+
     try {
         let expression = out.value.replace(/÷/g, '/').replace(/×/g, '*')
         const result = eval(expression)
